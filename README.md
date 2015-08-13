@@ -1,4 +1,4 @@
-# Ideal Integratoin Service
+# Ideal Integration Service
 
 Single REST like service that allows us to query a list of leases to get leases for tentants who will be moving in (future tense), moving out, or transfering.
 
@@ -49,13 +49,13 @@ Here's an example of an ideal response of the individual lease record (this excl
   "lease_start_date": "2015-11-01",
   "lease_end_date": "2016-10-31",
 
-  // Field to indicate the units use such as corporate housing, vacation, etc
+  // Field to indicate the unit's use such as corporate housing, vacation, etc
   "use_type": "coporate",
 
-  // Only applicable on move-ins
+  // Only applicable for move-ins
   "move_in_date": "2015-11-01",
 
-  // Only applicable on move-outs
+  // Only applicable for move-outs
   "move_out_date": "2015-10-11",
 
 
@@ -125,17 +125,17 @@ Above is just an ideal response. We can handle virtually any response. For examp
   <tr>
     <td nowrap>property id </td>
     <td>yes</td>
-    <td>The id of the property. this needs to be unique within each client</td>
+    <td>The id of the property. This needs to be unique within each client.</td>
   </tr>
   <tr>
     <td nowrap>unit address</td>
     <td>yes</td>
-    <td>The address of the unit</td>
+    <td>The address of the unit.</td>
   </tr>
   <tr>
     <td nowrap>status</td>
     <td>yes</td>
-    <td>The status of the lease which will indicate whether they are moving in, out or transferring. This doesn't have to be a single field. If multiple fields are used in order to indicate a move in, out or transfer that's completely ok</td>
+    <td>The status of the lease which will indicate whether they are moving in, out or transferring. This doesn't have to be a single field. If multiple fields are used in order to indicate a move in, out or transfer, that's completely ok.</td>
   </tr>
   <tr>
     <td nowrap>move date</td>
@@ -160,12 +160,12 @@ Above is just an ideal response. We can handle virtually any response. For examp
   <tr>
     <td nowrap>tenant last name</td>
     <td>yes</td>
-    <td>The tenant's laste name</td>
+    <td>The tenant's laste name.</td>
   </tr>
   <tr>
     <td nowrap>tenant email</td>
     <td>yes</td>
-    <td>The tenant's email</td>
+    <td>The tenant's email.</td>
   </tr>
   <tr>
     <td nowrap>tenant cell phone</td>
@@ -190,25 +190,15 @@ Above is just an ideal response. We can handle virtually any response. For examp
   <tr>
     <td nowrap>tenant forwarding address </td>
     <td>no</td>
-    <td>The tenants address that they are moving to when they move-out. This address is only used for move outs (and maybe used for transfers as well). Although it's highly recommended as it will prefill this info for the tenant when signing up</td>
-  </tr>
-  <tr>
-    <td nowrap></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td nowrap></td>
-    <td></td>
-    <td></td>
+    <td>The tenants address that they are moving to when they move-out. This address is only used for move outs (and maybe used for transfers as well). Although it's highly recommended as it will prefill this info for the tenant when signing up.</td>
   </tr>
 </table>
 
 
 ### Filtering
-We can create filters to filter any transactions that should ignored on our platform. The fitler can use any fields in the response. Therefore any extra information about the lease or tenant that you or your client may want to create a filter on should be included. 
+We can create filters in our system to filter out any transactions that should be ignored on our platform. The fitler can use any field(s) in the response. Therefore any extra information about the lease or tenant that you or your client may want to create a filter on should be included. 
 
-For example you may not want to send invites to corporate housing, so you should include which ever field has this information about the lease.
+For example, you may not want to send invites to corporate housing, so you should include which ever field has this information about the lease.
 
 ### Dates
 
