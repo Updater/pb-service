@@ -1,4 +1,4 @@
-# Ideal Integratoin Service
+# Ideal Integration Service
 <table>
   <tr>
     <td nowrap>tenant lease date </td>
