@@ -1,5 +1,11 @@
 # Ideal Integratoin Service
-
+<table>
+  <tr>
+    <td nowrap>tenant lease date </td>
+    <td>no</td>
+    <td>asdlfjalsdjf asdlfjas dlfjasd lfajsdf lkajsdflka jsdlfajksdlf jasdlfjasdl jflkads jflkajsdf lakjsdflka sjdflkadsjf</td>
+  </tr>
+</table>
 Single REST like service that allows us to query a list of leases to get leases for tentants who will be moving in (future tense), moving out, or transfering.
 
 ## Query options
@@ -33,7 +39,7 @@ It's not ideal to use `status=approved&status=ending` since many REST clients & 
 Here's an example of an ideal response of the individual lease record (this excludes a higher level object for paging, etc if paging is going to be implemented)
 
 
-```json
+```javascript
 {
   "id": "asdfl230as8", // The id of the lease
   "client_id": "1234",
@@ -59,7 +65,7 @@ Here's an example of an ideal response of the individual lease record (this excl
   "move_out_date": "2015-10-11",
 
 
-  tenants: [
+  "tenants": [
     {
       "id": "6789"  // The individual tenant or contact id
       "first_name: "Ryan",
@@ -116,7 +122,6 @@ status | yes | the status of the lease which will indicate whether they are movi
 move date | no | If you know when the tenants will be moving in or out. This can be a single field such as `move_date` or you may use multiple fields such as `move_in_date` and `move_out_date`
 lease start date | yes | the start of the lease. In the case of a move-in, if no move date is provided this will be used as the tenants move in date
 lease end date | yes | the end date of the lease. In the case of a move-out, if no move date is provided whit will be used as the tenants move out date
-
 tenant first name | yes |
 tenant last name | yes |
 tenant email | yes |
