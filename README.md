@@ -1,6 +1,6 @@
 # Ideal Integration Service
 
-Single REST like service that allows us to query a list of leases to get leases for tentants who will be moving in (future tense), moving out, or transfering.
+Single REST like service that allows us to query a list of leases to get all leases for tentants who will be moving in (future tense), moving out, or transfering within a specific timeframe.
 
 ## Query options
 The service would include the ability to query the leases to be able to filter on the below
@@ -16,7 +16,7 @@ The service would include the ability to query the leases to be able to filter o
 The actual params/filters do not matter. We just need a way to retrieve the data based on the above.
 
 ## HTTP Method
-The service could be a GET or a POST. Although GET is more appropriate for REST it this case it does nto matter. 
+The service could be a GET or a POST. Although GET is more appropriate for REST it this case it does not matter. 
 
 If GET is chosen, since the status param may have multiple values it's best practice to follow the below convention
 
