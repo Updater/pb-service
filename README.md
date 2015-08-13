@@ -155,17 +155,17 @@ Above is just an ideal response. We can handle virtually any response. For examp
   <tr>
     <td nowrap>tenant first name</td>
     <td>yes</td>
-    <td></td>
+    <td>The tenant's first name</td>
   </tr>
   <tr>
     <td nowrap>tenant last name</td>
-    <td></td>
-    <td></td>
+    <td>yes</td>
+    <td>The tenant's laste name</td>
   </tr>
   <tr>
     <td nowrap>tenant email</td>
     <td>yes</td>
-    <td></td>
+    <td>The tenant's email</td>
   </tr>
   <tr>
     <td nowrap>tenant cell phone</td>
