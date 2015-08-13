@@ -33,7 +33,7 @@ It's not ideal to use `status=approved&status=ending` since many REST clients & 
 Here's an example of an ideal response of the individual lease record (this excludes a higher level object for paging, etc if paging is going to be implemented)
 
 
-```json
+```javascript
 {
   "id": "asdfl230as8", // The id of the lease
   "client_id": "1234",
@@ -59,7 +59,7 @@ Here's an example of an ideal response of the individual lease record (this excl
   "move_out_date": "2015-10-11",
 
 
-  tenants: [
+  "tenants": [
     {
       "id": "6789"  // The individual tenant or contact id
       "first_name: "Ryan",
