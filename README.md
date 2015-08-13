@@ -1,11 +1,5 @@
-# Ideal Integration Service
-<table>
-  <tr>
-    <td nowrap>tenant lease date </td>
-    <td>no</td>
-    <td>asdlfjalsdjf asdlfjas dlfjasd lfajsdf lkajsdflka jsdlfajksdlf jasdlfjasdl jflkads jflkajsdf lakjsdflka sjdflkadsjf</td>
-  </tr>
-</table>
+# Ideal Integratoin Service
+
 Single REST like service that allows us to query a list of leases to get leases for tentants who will be moving in (future tense), moving out, or transfering.
 
 ## Query options
@@ -39,7 +33,7 @@ It's not ideal to use `status=approved&status=ending` since many REST clients & 
 Here's an example of an ideal response of the individual lease record (this excludes a higher level object for paging, etc if paging is going to be implemented)
 
 
-```javascript
+```json
 {
   "id": "asdfl230as8", // The id of the lease
   "client_id": "1234",
@@ -65,7 +59,7 @@ Here's an example of an ideal response of the individual lease record (this excl
   "move_out_date": "2015-10-11",
 
 
-  "tenants": [
+  tenants: [
     {
       "id": "6789"  // The individual tenant or contact id
       "first_name: "Ryan",
@@ -112,24 +106,103 @@ Above is just an ideal response. We can handle virtually any response. For examp
 
 ## Response Fields
 
-Name | Required | Description
----- | -------- | -----------
-id | yes | The id of the lease
-client id | yes | The id of your client
-property id | yes | the id of the property. this needs to be unique within each client
-unit address | yes | the address of the unit
-status | yes | the status of the lease which will indicate whether they are moving in, out or transferring. This doesn't have to be a single field. If multiple fields are used in order to indicate a move in, out or transfer that's completely ok
-move date | no | If you know when the tenants will be moving in or out. This can be a single field such as `move_date` or you may use multiple fields such as `move_in_date` and `move_out_date`
-lease start date | yes | the start of the lease. In the case of a move-in, if no move date is provided this will be used as the tenants move in date
-lease end date | yes | the end date of the lease. In the case of a move-out, if no move date is provided whit will be used as the tenants move out date
-tenant first name | yes |
-tenant last name | yes |
-tenant email | yes |
-tenant cell phone | no | Although it's not required it's highly recommended for SMS based invites
-tenant home phone | no | Although it's highly recommended
-tenant gender | no | the tenants gender (male|femalse|m|f)
-tenant previous address | no | The tenants address they are currently at before they move-in. This address is only used for move ins and is ignored for move-outs or transfers. Although it's highly recommended as it will prefill this info for the tenant when signing up
-tenant forwarding address | no | The tenants address that they are moving to when they move-out. This address is only used for move outs (and maybe used for transfers as well). Although it's highly recommended as it will prefill this info for the tenant when signing up
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>yes</td>
+    <td>The id of the lease</td>
+  </tr>
+  <tr>
+    <td>client id</td>
+    <td>yes</td>
+    <td>The id of your client</td>
+  </tr>
+  <tr>
+    <td nowrap>property id </td>
+    <td>yes</td>
+    <td>The id of the property. this needs to be unique within each client</td>
+  </tr>
+  <tr>
+    <td nowrap>unit address</td>
+    <td>yes</td>
+    <td>The address of the unit</td>
+  </tr>
+  <tr>
+    <td nowrap>status</td>
+    <td>yes</td>
+    <td>The status of the lease which will indicate whether they are moving in, out or transferring. This doesn't have to be a single field. If multiple fields are used in order to indicate a move in, out or transfer that's completely ok</td>
+  </tr>
+  <tr>
+    <td nowrap>move date</td>
+    <td>no</td>
+    <td>If you know when the tenants will be moving in or out. This can be a single field such as `move_date` or you may use multiple fields such as `move_in_date` and `move_out_date`</td>
+  </tr>
+  <tr>
+    <td nowrap>lease start date</td>
+    <td>yes</td>
+    <td>the start of the lease. In the case of a move-in, if no move date is provided this will be used as the tenants move in date</td>
+  </tr>
+  <tr>
+    <td nowrap>lease end date</td>
+    <td>yes</td>
+    <td>the end date of the lease. In the case of a move-out, if no move date is provided whit will be used as the tenants move out date</td>
+  </tr>
+  <tr>
+    <td nowrap>tenant first name</td>
+    <td>yes</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td nowrap>tenant last name</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td nowrap>tenant email</td>
+    <td>yes</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td nowrap>tenant cell phone</td>
+    <td>no</td>
+    <td>Although it's not required it's highly recommended for SMS based invites</td>
+  </tr>
+  <tr>
+    <td nowrap>tenant home phone</td>
+    <td>no</td>
+    <td>Although it's highly recommended</td>
+  </tr>
+  <tr>
+    <td nowrap>tenant gender </td>
+    <td>no</td>
+    <td>the tenants gender (male|femalse|m|f)</td>
+  </tr>
+  <tr>
+    <td nowrap>tenant previous address</td>
+    <td>no</td>
+    <td>The tenants address they are currently at before they move-in. This address is only used for move ins and is ignored for move-outs or transfers. Although it's highly recommended as it will prefill this info for the tenant when signing up</td>
+  </tr>
+  <tr>
+    <td nowrap>tenant forwarding address </td>
+    <td>no</td>
+    <td>The tenants address that they are moving to when they move-out. This address is only used for move outs (and maybe used for transfers as well). Although it's highly recommended as it will prefill this info for the tenant when signing up</td>
+  </tr>
+  <tr>
+    <td nowrap></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td nowrap></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
 
 ### Filtering
