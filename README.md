@@ -33,7 +33,7 @@ It's not ideal to use `status=approved&status=ending` since many REST clients & 
 Here's an example of an ideal response of the individual lease record (this excludes a higher level object for paging, etc if paging is going to be implemented)
 
 
-```javascript
+```json
 {
   "id": "asdfl230as8", // The id of the lease
   "client_id": "1234",
